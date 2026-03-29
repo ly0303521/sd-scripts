@@ -1,0 +1,1 @@
+accelerate launch --num_cpu_threads_per_process 1 sdxl_train_network.py --config_file sdxl_train_config.toml
