@@ -1,0 +1,14 @@
+[general]
+shuffle_caption = false
+caption_extension = '.txt'
+keep_tokens = 1
+
+[[datasets]]
+resolution = 512
+batch_size = 20
+enable_bucket = true
+bucket_reso_steps = 64
+
+[[datasets.subsets]]
+image_dir = '/home/ly/SPACE_HDD/Data/chinese_landscape_HD_Qwen'
+num_repeats = 10

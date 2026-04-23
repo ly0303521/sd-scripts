@@ -1,0 +1,37 @@
+# 基础模型
+pretrained_model_name_or_path = "stable-diffusion-v1-5/stable-diffusion-v1-5"
+
+# 引用数据集
+dataset_config = "sd15_dataset_config.toml"
+
+# 输出设置
+output_dir = "output_chinese_hd_style_lora"
+output_name = "sd15_chinese_hd_style_lora"
+save_model_as = "safetensors"
+
+# 训练脚本参数
+network_module = "networks.lora"
+network_dim = 8
+network_alpha = 4
+
+# 显存优化关键项 (针对 SD1.5)
+mixed_precision = "bf16"
+gradient_checkpointing = true
+cache_latents = true
+network_train_unet_only = false
+
+# 学习率与优化器
+optimizer_type = "AdamW8bit"
+learning_rate = 1e-4
+unet_lr = 1e-4
+lr_scheduler = "cosine_with_restarts"
+lr_warmup_steps = 100
+
+# 训练时长
+max_train_epochs = 30
+save_every_n_epochs = 1
+sdpa = true
+
+# 日志记录
+logging_dir = "logs"
+log_with = "tensorboard"
